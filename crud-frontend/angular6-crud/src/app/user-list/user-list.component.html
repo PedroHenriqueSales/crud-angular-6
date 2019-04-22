@@ -1,3 +1,27 @@
-<p>
-  user-list works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1>Usuários</h1>
+  </div>
+  <div class="panel-body">
+      <table class="table table-striped table-bordered">
+          <thead>
+              <tr>
+                  <th>Nome</th>
+                  <th>Idade</th>
+                  <th>Telefone</th>
+                  <th>CEP</th>
+                  <th>Ações</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let user of users | async">
+                  <td>{{user.name}}</td>
+                  <td>{{user.age}}</td>
+                  <td>{{user.phones[0].number}}</td>
+                  <td>{{user.address.postalCode}}</td>
+                  <td><button (click)="deleteUser(user.id)">Excluir</button></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
