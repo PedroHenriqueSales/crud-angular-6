@@ -26,7 +26,7 @@ public class UserController {
 
     @PostMapping("/users")
     public User createUser(@Valid @RequestBody User user){
-        return repository.save(user);
+            return repository.save(user);
     }
 
     @GetMapping("/users/{id}")
@@ -51,7 +51,7 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping("/users/{id}")
     public Map<String, Boolean> deleteUser(@PathVariable(value = "id") Long userId)
             throws ObjectNotFoundException {
         User user = repository.findById(userId)

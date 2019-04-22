@@ -15,10 +15,6 @@ public class Phone {
 
     private Long number;
 
-    @ManyToOne
-    @JoinColumn(name = "co_user")
-    private User user;
-
     public Long getId() {
         return id;
     }
@@ -43,11 +39,4 @@ public class Phone {
         this.number = number;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

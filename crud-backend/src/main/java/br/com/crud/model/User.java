@@ -1,5 +1,7 @@
 package br.com.crud.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,10 +18,11 @@ public class User {
 
     private Long age;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Phone> phones;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "CO_PHONE")
+    private Phone phone;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "CO_ADDRESS")
     private Address address;
 
@@ -49,5 +52,17 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phones) {
+        this.phone = phones;
     }
 }
