@@ -8,7 +8,7 @@ import { User } from './user.model';
 })
 export class UserService {
 
-  private baseUrl = '/api/crud/users';
+  private baseUrl = 'http://localhost:4200/api/users';
 
   constructor(private http: HttpClient) { }
 
