@@ -17,9 +17,10 @@
               <tr *ngFor="let user of users | async">
                   <td>{{user.name}}</td>
                   <td>{{user.age}}</td>
-                  <td>{{user.phones[0].number}}</td>
+                  <td>{{user.phone.ddd}}-{{user.phone.number}}</td>
                   <td>{{user.address.postalCode}}</td>
-                  <td><button (click)="deleteUser(user.id)">Excluir</button></td>
+                  <td><button (click)="deleteUser(user.id)">Excluir</button>
+                    <button (click)="editUser(user)">Editar</button></td>
               </tr>
           </tbody>
       </table>

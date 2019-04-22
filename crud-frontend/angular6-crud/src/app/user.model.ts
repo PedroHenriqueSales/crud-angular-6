@@ -6,7 +6,7 @@ export class User{
     id: number;
     name: string;
     age: number;
-    phones: Phone[];
+    phone: Phone;
     address: Address;
 
 }

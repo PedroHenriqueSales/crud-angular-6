@@ -2,24 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateUserComponent } from './create-user/create-user.component';
-import { UserDatailComponent } from './user-datail/user-datail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUserComponent,
-    UserDatailComponent,
-    UserListComponent
+    UserListComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule,    
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
