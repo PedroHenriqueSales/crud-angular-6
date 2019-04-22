@@ -1,0 +1,6 @@
+br/com/crud/repository/UserRepository.class
+br/com/crud/MainController.class
+br/com/crud/controller/UserController.class
+br/com/crud/model/Address.class
+br/com/crud/model/Phone.class
+br/com/crud/model/User.class
