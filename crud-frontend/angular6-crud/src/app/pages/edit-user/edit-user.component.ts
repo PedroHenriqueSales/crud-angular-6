@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user.model';
+import { User } from '../../models/user.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
-import { Phone } from '../phone.model';
-import { Address } from '../address.model';
+import { UserService } from '../../providers/user.service';
+import { Phone } from '../../models/phone.model';
+import { Address } from '../../models/address.model';
 
 @Component({
   selector: 'app-edit-user',

@@ -1,0 +1,45 @@
+<h3>Atualizar Usuário</h3>
+<div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-row">
+          <div class="col-md-8 mb-3">
+              <label for="name">Nome:</label>
+              <input type="text" class="form-control" id="name" required [(ngModel)]="user.name" name="name">
+          </div>
+  
+          <div class="col-md-3 mb-3">
+              <label for="age">Idade</label>
+              <input type="text" class="form-control" id="age" required [(ngModel)]="user.age" name="age" mask="999">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-5 mb-3">
+            <label for="postalCode">CEP:</label>
+            <input type="text" class="form-control" id="postalCode" required [(ngModel)]="user.address.postalCode" name="postalCode" mask="99-999.999">
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="number">Número:</label>
+            <input type="text" class="form-control" id="number" required [(ngModel)]="user.address.number" name="number" mask="9999">
+          </div>
+        </div>
+          
+        <div class="form-row">
+          <div class="col-md-2 mb-3">
+            <label for="ddd">DDD:</label>
+            <input type="text" class="form-control" id="ddd" required [(ngModel)]="user.phone.ddd" name="ddd" mask='(00)'> 
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="number">Número:</label>
+            <input type="text" class="form-control" id="number" required [(ngModel)]="user.phone.number" name="number" mask='00000-0000'>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Salvo com sucesso!</h4>
+</div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../user.model';
 import {Router} from "@angular/router";
-import { UserService } from '../user.service';
+import { User } from '../../models/user.model';
+import { UserService } from '../../providers/user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -23,6 +23,7 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(id: number){
+    if(confirm("Confirmar exclusão?"))
     this.userService.deleteUser(id).subscribe(
       data => {
         this.reload();

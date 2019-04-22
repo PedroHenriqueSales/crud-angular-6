@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import {NgxMaskModule} from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     AppRoutingModule,
     FormsModule,    
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
